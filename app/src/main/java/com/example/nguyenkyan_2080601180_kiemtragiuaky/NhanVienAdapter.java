@@ -35,7 +35,7 @@ public class NhanVienAdapter extends RecyclerView.Adapter<NhanVienAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull NhanVienAdapter.ViewHolder holder, int position) {
         NhanVien temp = lstNhanVien.get(position);
-        holder.tv.setText(temp.getHoTen() + " - Email: " + temp.getEmail());
+        holder.tv.setText(temp.getHoTen() + " - Email: " + temp.getEmail() );
     }
 
     @Override

@@ -41,7 +41,7 @@ public class NhanVienDAO {
         ContentValues values = new ContentValues();
         values.put("hoten", p.getHoTen());
         values.put("email", p.getEmail());
-        values.put("khoa_id", p.getKhoa().getMaso());
+        values.put("khoa_id", 1);
         values.put("image", p.getImage());
         long newRowId =db.insert("NhanVien", null, values);
 
@@ -54,9 +54,9 @@ public class NhanVienDAO {
         }
     }
 
-    public void Delete(int khoaId) {
+    public void Delete(String name) {
         SQLiteDatabase db = nhanVienHelper.getWritableDatabase();
         //c1: sử dụng delete
-        db.delete("NhanVien", "id=?", new String[]{String.valueOf(khoaId)});
+        db.delete("NhanVien", "hoten=?", new String[]{String.valueOf(name)});
     }
 }

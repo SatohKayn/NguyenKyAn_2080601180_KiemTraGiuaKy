@@ -35,7 +35,7 @@ public class KhoaAdapter extends RecyclerView.Adapter<KhoaAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull KhoaAdapter.ViewHolder holder, int position) {
         Khoa temp = lstKhoa.get(position);
-        holder.tv.setText(temp.getTenkhoa());
+        holder.tv.setText("Ten Khoa= " + temp.getTenkhoa() + ", Id: " + temp.getMaso());
     }
 
     @Override

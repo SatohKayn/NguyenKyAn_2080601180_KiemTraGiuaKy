@@ -34,21 +34,6 @@ public class KhoaDAO {
         return listProduct;
     }
 
-    public Khoa GetKhoaById(int id)
-    {
-        SQLiteDatabase db = khoaHelper.getWritableDatabase();
-        List<Khoa> listProduct = new ArrayList<>();
-        String query = "SELECT * FROM Khoa Where id= " + String.valueOf(id);
-        Cursor c = db.rawQuery(query, null);
-        Khoa temp = new Khoa();
-        while (c.moveToNext())
-        {
-            temp.setMaso(c.getInt(0));
-            temp.setTenkhoa(c.getString(1));
-        }
-        return temp;
-    }
-
     public void Insert(Khoa p) {
         String s = p.getTenkhoa();
         SQLiteDatabase db = khoaHelper.getWritableDatabase();
@@ -66,10 +51,10 @@ public class KhoaDAO {
         }
     }
 
-    public void Delete(int khoaId) {
+    public void Delete(String khoaId) {
         SQLiteDatabase db = khoaHelper.getWritableDatabase();
         //c1: sử dụng delete
-        db.delete("khoa", "id=?", new String[]{String.valueOf(khoaId)});
+        db.delete("khoa", "khoa_name=?", new String[]{String.valueOf(khoaId)});
     }
 
 }

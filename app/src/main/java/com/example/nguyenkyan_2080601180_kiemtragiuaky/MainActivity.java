@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 FragmentTransaction fr_add = fragmentManager.beginTransaction();
-                fr_add.add(R.id.frame_layout,new Khoa_Fragment());
+                fr_add.replace(R.id.frame_layout,new Khoa_Fragment());
                 fr_add.commit();
             }
         });
@@ -47,19 +47,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 FragmentTransaction fr_add = fragmentManager.beginTransaction();
-                fr_add.add(R.id.frame_layout, new NhanVien_Fragment());
+                fr_add.replace(R.id.frame_layout, new NhanVien_Fragment());
                 fr_add.commit();
             }
         });
-
-        init();
 
     }
 
     void init()
     {
         FragmentTransaction fr_add1= fragmentManager.beginTransaction();
-        fr_add1.add(R.id.frame_layout,new Home_Fragment());
+        fr_add1.replace(R.id.frame_layout,new Home_Fragment());
         fr_add1.commit();
     }
 }

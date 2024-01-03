@@ -11,7 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 public class CustomAlertDialog2 extends Dialog {
-    private NhanVienDAO khoaDAO;
+    private NhanVienDAO nhanVienDAO;
 
     EditText editHoTen, editEmail, editIdKhoa, editImage;
 
@@ -19,7 +19,7 @@ public class CustomAlertDialog2 extends Dialog {
 
     public CustomAlertDialog2(@NonNull Context context) {
         super(context);
-        khoaDAO= new NhanVienDAO(context);
+        nhanVienDAO = new NhanVienDAO(context);
     }
 
     @Override
@@ -69,7 +69,7 @@ public class CustomAlertDialog2 extends Dialog {
         String IdKhoa= editIdKhoa.getText().toString().trim();
         String Image= editImage.getText().toString().trim();
         NhanVien khoa = new NhanVien(Name, Email, new Khoa(), Image);
-        khoaDAO.Insert(khoa);
+        nhanVienDAO.Insert(khoa);
     }
     //hàm kiểm tra xem người dùng đã nhập đủ thông tin chưa
     private boolean isDataValid(){

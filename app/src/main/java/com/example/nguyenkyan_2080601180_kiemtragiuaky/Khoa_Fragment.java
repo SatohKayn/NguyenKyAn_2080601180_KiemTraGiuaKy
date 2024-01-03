@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -22,7 +23,7 @@ public class Khoa_Fragment extends Fragment {
     FloatingActionButton floatingActionButton;
 
     RecyclerView recyclerView;
-
+    Button btnDel;
 
 
 
@@ -34,12 +35,20 @@ public class Khoa_Fragment extends Fragment {
         View view= inflater.inflate(R.layout.fragment_khoa,container,false);
         floatingActionButton=view.findViewById(R.id.floatingActionButton);
         CustomAlertDialog customeAlertDialog= new CustomAlertDialog(getActivity());
-
+        btnDel = view.findViewById(R.id.button);
+        CustomDialog4 customDialog4= new CustomDialog4(getActivity());
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 customeAlertDialog.show();
+            }
+        });
+        btnDel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                customDialog4.show();
             }
         });
         recyclerView=view.findViewById(R.id.rcvkhoa);
